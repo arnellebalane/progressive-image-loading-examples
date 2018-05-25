@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 0;
+    text-align: center;
+    background-color: #fafafa;
+    border: 1px solid transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.image {
+    display: inline-block;
+    width: 400px;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 0 20px;
+    background-color: #fff;
+    box-shadow:
+        0 15px 35px rgba(50, 50, 93, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.image.blurry {
+    position: relative;
+}
+
+.image.blurry img {
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.image.blurry > img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    max-height: calc(100% - 16px);
+}
+
+.image.blurry img.loaded {
+    opacity: 1;
+}
+
+.image-tiny {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-tiny img {
+    width: 100%;
+    filter: blur(30px);
+}
+
+.group {
+    margin: 40px 0;
+}
